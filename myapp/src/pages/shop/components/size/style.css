@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.size-list .size{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.size input{
+    height: 25px;
+    width: 25px;
+}
+
+.size p{
+    color: gray;
+    font-size: 20px;
+
+}
+
+.size-list{
+    padding: 20px;
+    margin-left: 33px;
+    background-color: white;
+    width: 270px;
+}

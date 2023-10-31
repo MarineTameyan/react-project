@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.shop{
+    background-color:beige;
+    display: flex;
+}
+
+.shop h1{
+    padding: 20px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: grey;
+}
