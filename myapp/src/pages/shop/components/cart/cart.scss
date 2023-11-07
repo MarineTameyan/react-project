@@ -1,0 +1,56 @@
+@import "src/assets/styles/variables.scss";
+
+.cart{
+    padding: 40px;
+
+    .cart-details{
+        display: flex;
+        background-color: $white;
+        justify-content: center;
+        gap: 51px;
+        height: 70px;
+        width: 700px;
+        margin: 25px;
+    p{
+        font-size: $font-size-20;
+        padding-top: 15px;
+    }
+
+    img{
+        height: 70px;
+        width: 70px;
+    }
+
+    .first-button{
+        padding-top: 15px;
+        display: flex;
+
+        button{
+            background-color: $first-base-color;
+            height: 40px;
+            width: 40px;
+            font-size: $font-size-18;
+            font-weight: bold;
+        }
+
+        p{
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: $font-size-14;
+            background-color: $grey-45;
+        }
+    }
+
+    .remove-button{
+        padding-top: 15px;
+        button{
+            height: 40px;
+            width: 40px;
+            background-color: $red;
+            color: $white;
+        }
+    }
+}
+}

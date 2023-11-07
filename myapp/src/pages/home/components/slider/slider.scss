@@ -1,0 +1,18 @@
+@import "src/assets/styles/variables.scss";
+
+
+.image-container {
+    position: relative;
+}
+
+.image-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+

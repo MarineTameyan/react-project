@@ -1,0 +1,31 @@
+@import "src/assets/styles/variables.scss";
+
+.info{
+    display: flex;
+    gap: 75px;
+    justify-content: center;
+    margin-top: 50px;
+
+    .home-info{
+        display: flex;
+        gap: 20px;
+        width: 350px;
+        height: 100px;
+        background-color: $white;
+
+        img{
+            height: 50px;
+            width: 50px;
+            margin: 20px;
+        }
+
+        p{
+            font-size: $font-size-25;
+            text-align: center;
+            margin: 25px;
+        }
+    }
+}
+
+
+

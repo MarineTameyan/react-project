@@ -1,0 +1,36 @@
+@import "src/assets/styles/variables.scss";
+
+
+.categories{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+
+    .category{
+        justify-content: center;
+        display: flex;
+        width: 375px;
+        gap: 15px;
+        background-color: $white;
+    }
+
+    .category-img img{
+        height: 150px;
+        width: 150px;
+    }
+
+    .text{
+        margin: 30px;
+
+        h5{
+            font-size: $font-size-20;
+        }
+
+        p{
+            font-size: $font-size-20;
+            margin-top: 20px;
+        }
+    }
+}
+

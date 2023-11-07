@@ -1,0 +1,26 @@
+@import "src/assets/styles/variables.scss";
+
+.size-list{
+    padding: 20px;
+    margin-left: 33px;
+    background-color: $white;
+    width: 270px;
+
+    .size{
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+
+        p{
+            color: $grey-62;
+            font-size: $font-size-20;
+        }
+
+        input{
+            height: 25px;
+            width: 25px;
+        }
+
+    }
+    
+}

@@ -1,0 +1,15 @@
+@import "src/assets/styles/variables.scss";
+
+.shop{
+    background-color:$grey-45;
+    display: flex;
+
+    h1{
+        padding: 20px;
+        margin-left: 10px;
+        font-size: $font-size-30;
+        color: $grey-62;
+    }
+
+
+}
