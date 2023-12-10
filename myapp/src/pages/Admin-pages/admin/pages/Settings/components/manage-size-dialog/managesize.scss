@@ -1,0 +1,36 @@
+@import "src/assets/styles/variables.scss";
+
+.content_box{
+
+    .add_name_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        
+    }
+    .add_name_box input{
+        height: 50px;
+        width: 300px;
+        font-size: 20px;
+        padding: 10px;
+        font-style: italic;
+    }
+}
+
+.confirmButton{
+    margin-top: 50px;
+    display: flex;
+    gap: 200px;
+
+    .confirmBtn{
+        width: 200px;
+        height: 50px;
+        font-weight: bold;
+        color: $white;
+        font-size: $font-size-22;
+        background-color: $blue;
+    }
+}

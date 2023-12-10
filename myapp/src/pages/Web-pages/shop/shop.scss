@@ -1,0 +1,48 @@
+@import "src/assets/styles/variables.scss";
+
+.shop{
+    background-color:$grey-45;
+    display: flex;
+
+    h1{
+        padding: 20px;
+        margin-left: 10px;
+        font-size: $font-size-30;
+        color: $grey-62;
+    }
+    .product-card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 100px;
+
+        .product-list{
+            background-color: $white;
+            width: 393px;
+            margin-bottom: 50px;
+    
+            img{
+                height: 400px;
+                width: 393px;
+            }
+    
+            h5{
+                margin-top: 15px;
+                text-align: center;
+                font-size: $font-size-20;
+                color: $black;
+            }
+    
+            p{
+                margin-top: 15px;
+                margin-bottom: 15px;
+                text-align: center;
+                font-size: $font-size-30;
+                color: $black;
+            }
+        }   
+    }
+
+
+}

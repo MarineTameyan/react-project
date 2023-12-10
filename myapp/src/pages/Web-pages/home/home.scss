@@ -1,0 +1,196 @@
+@import "src/assets/styles/variables.scss";
+
+.home-page{
+    background-color:$grey-45;
+
+    .home-photos{
+        display: flex;
+        gap: 25px;
+        padding-top: 50px;
+        justify-content: center;
+    }
+    
+    .fashion{
+        // background-image: url("../../assets/images/man.jpg");
+        background-repeat: no-repeat;
+        background-size: 1100px;
+        width: 60%;
+
+        h2{
+            text-align: center;
+            margin-top: 50px;
+            color: $white;
+            font-size: $font-size-40;
+        }
+
+        p{
+            text-align: center;
+            margin-top: 50px;
+            color: $white;
+            font-size: $font-size-20;
+        }
+    }
+
+    .shop-button{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        button{
+            height: 50px;
+            width: 150px;
+            font-size: $font-size-20;
+            border: 1px solid $white;
+            color: $white;
+            background-color: $grey-80;
+        }
+    }
+
+    button:hover{
+        border: 1px solid $white;
+        background-color: $white;
+        color: $black;
+    }
+
+    .special-orders{
+        display: flex;
+        gap: 25px;
+        flex-direction: column;
+        width: 35%;
+
+        
+        .click{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+            button{
+                height: 50px;
+                width: 150px;
+                font-size: $font-size-20;
+                color: $black;
+                background-color: $first-base-color;
+                border: 1px solid $first-base-color;            
+            }
+        }
+
+        button:hover{
+            background-color: $dark-orange;
+            border: 1px solid $dark-orange;
+        }
+
+        .second-offer{
+            // background-image: url("../../assets/images/second.jpg");
+            background-repeat: no-repeat;
+            background-size: 600px;
+            height: 200px;
+            width: 600px;
+
+            p{
+                text-align: center;
+                font-size: $font-size-25;
+                color: $white;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    h1{
+        padding: 25px;
+        margin-left: 5px;
+        font-size: $font-size-45;
+        color: $grey-62;
+    }
+
+    .specials{
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+
+        .first-special{
+            // background-image: url("../../assets/images/first.jpg");
+            background-repeat: no-repeat;
+            background-size: 795px;
+            height: 400px;
+            width: 795px;
+
+            p{
+                text-align: center;
+                font-size: $font-size-25;
+                color: $white;
+                margin-top: 40px;
+            }
+        }
+
+        .second-special{
+            // background-image: url("../../assets/images/second.jpg");
+            background-repeat: no-repeat;
+            background-size: 795px;
+            height: 400px;
+            width: 795px;
+
+            p{
+                text-align: center;
+                font-size: $font-size-25;
+                color: $white;
+                margin-top: 40px;
+            }
+        }
+
+        .click{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+            button{
+                height: 50px;
+                width: 150px;
+                font-size: $font-size-20;
+                color: $black;
+                background-color: $first-base-color;
+                border: 1px solid $first-base-color;            
+            }
+        }
+
+        button:hover{
+            background-color: $dark-orange;
+            border: 1px solid $dark-orange;
+        }
+    }
+
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+
+        .product-list{
+            background-color: $white;
+            width: 393px;
+            margin-bottom: 50px;
+    
+            img{
+                height: 400px;
+                width: 393px;
+            }
+    
+            h5{
+                margin-top: 15px;
+                text-align: center;
+                font-size: $font-size-20;
+                color: $black;
+            }
+    
+            p{
+                margin-top: 15px;
+                margin-bottom: 15px;
+                text-align: center;
+                font-size: $font-size-30;
+                color: $black;
+            }
+        }   
+    }
+
+}
+

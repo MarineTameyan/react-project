@@ -1,0 +1,162 @@
+@import "src/assets/styles/variables.scss";
+
+.input-forms{
+    background-color: $grey-45;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .bill-address{
+        width: 1000px;
+        padding: 25px;
+       
+        h2{
+            font-size: $font-size-25;
+            padding: 25px;
+        }
+
+        .address-forms{
+            background-color: $white;
+            padding: 25px;
+            margin-left: 27px;
+        }
+
+        .forms{
+            display: flex;
+            gap: 20px;
+
+            input{
+                height: 40px;
+                width: 250px;
+                border: 1px solid $grey-45;
+                margin: 10px;
+                padding: 5px;
+                font-size: $font-size-20;
+            }
+        }
+
+        .checkboxes{
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+
+            input{
+                height: 25px;
+                width: 25px;
+            }
+
+            p{
+                font-size: $font-size-18;
+                margin-top: 2px;
+                color: $grey-62;
+            }
+        }
+    }
+
+    .orders{
+        padding: 25px;
+        h2{
+            font-size: $font-size-25;
+            padding: 25px;
+        }
+
+        .order-details{
+            background-color: $white;
+            width: 500px;
+            padding: 25px;
+            margin-left: 27px;
+
+            .details{
+                display: flex;
+                gap: 80px;
+                margin: 10px;
+
+                p{
+                    font-size: $font-size-20;
+                    color: $grey-62;
+                }
+            }
+
+            .amount{
+                margin-top: 20px;
+            .payment-amount{
+                display: flex;
+                gap: 80px;
+                margin: 10px;
+
+                h6{
+                    font-size: $font-size-22
+                }
+
+                p{
+                    font-size: $font-size-22;
+                    font-weight: bold;
+                }
+            }
+        }
+        }
+
+        .payment-total{
+            display: flex;
+            gap: 80px;
+            margin-top: 40px;
+            margin-left: 10px;
+
+            h4{
+                font-size: $font-size-25;
+            }
+
+            p{
+                font-size: $font-size-25;
+                font-weight: bold;
+            }
+        }
+
+        .payment-types{
+            
+            .type{
+                background-color: $white;
+                width: 500px;
+                padding: 25px;
+                margin-left: 27px;
+            }
+
+            .types{
+                display: flex;
+                margin: 10px;
+                gap: 15px;
+
+                input{
+                    height: 15px;
+                    width: 15px;
+                    margin-top: 8px;
+                }
+                
+                p{
+                    font-size: $font-size-20;
+                    color: $grey-62;
+                }
+            }
+
+            .payment-button{
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+
+                button{
+                    height: 60px;
+                    width: 200px;
+                    font-size: $font-size-16;
+                    background-color: $first-base-color;
+                    border: 1px solid $first-base-color;
+                    font-weight: bold;
+                }
+            }
+
+            button:hover{
+                background-color: $dark-orange;
+                border: 1px solid $dark-orange;
+            }
+        }
+    }
+}

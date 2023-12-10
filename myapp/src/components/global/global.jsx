@@ -1,4 +1,5 @@
 import React from "react";
+import "./global.scss";
 import Dress from "../../assets/images/blouse.jpg";
 import Shoes from "../../assets/images/shoes.jpg";
 import Camera from "../../assets/images/camera.jpg";
@@ -9,7 +10,6 @@ import Watch from "../../assets/images/watch.jpg";
 import ManFashion from "../../assets/images/mansweater.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { routerLinks } from "../../router/router";
-import './global.scss'
 
 export const GlobalProducts = () =>{
 

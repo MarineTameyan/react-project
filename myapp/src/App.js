@@ -1,26 +1,38 @@
 import { Header } from './components/header/header';
-import { Route, Routes } from "react-router-dom";
-import { routerLinks } from "./router/router";
-import Home from './pages/home/home';
-import Shop from './pages/shop/shop';
-import Contact from './pages/contact/contact';
 import { Footer } from './components/footer/footer';
-import { ShopDetail } from './pages/shop/pages/shopdetail';
-import { ShopCart } from './pages/shop/pages/shopping-cart/shopcart';
-
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { routerLinks } from "./router/router";
+import Home from "./pages/Web-pages/home/home";
+import Shop from "./pages/Web-pages/shop/shop";
+import Contact from "./pages/Web-pages/contact/contact";
+import { ShopDetail } from "./pages/Web-pages/shopdetails/shopdetail";
+import { Checkout } from "./pages/Web-pages/checkout/checkout";
+import { ShopCart } from './pages/Web-pages/shopping-cart/shopcart';
+import { Login } from './pages/Web-pages/login/login';
+import { Registration } from './pages/Web-pages/registration/registration';
+import { useEffect } from 'react';
+import { Auth } from './components/auth/auth';
+import { Guest } from './components/guest/guest';
+import { useState } from 'react';
 
 function App() {
-  return <>
-    <Header/>
-    <Routes>
-            <Route path={routerLinks.HOME} element={<Home/>}></Route>
-            <Route path={routerLinks.SHOP} element={<Shop/>}></Route>
-            <Route path={routerLinks.CONTACT} element={<Contact/>}></Route>
-            <Route path={routerLinks.DETAIL} element={<ShopDetail/>}></Route>
-            <Route path={routerLinks.CART} element={<ShopCart/>}></Route>
-    </Routes>
-    <Footer/>
-  </>
+  const [token, setToken] = useState('')
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    let tokenData = localStorage.getItem('token')
+    setToken(tokenData)
+    if(token){
+navigate(routerLinks.CATEGORIES)
+    }
+    
+}, []);
+
+// if(userData.userLoading){
+//    <p>Loading.........</p>
+// }
+return  token ?  <Auth/> : <Guest/>
+
 }
 
 export default App;

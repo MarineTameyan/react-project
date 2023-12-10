@@ -1,0 +1,106 @@
+@import "src/assets/styles/variables.scss";
+
+.contact{
+    background-color:$grey-45;
+
+    h1{
+        padding: 30px;
+        margin-left: 30px;
+        font-size: $font-size-45;
+        color: $grey-62;
+    }
+
+    .contact-details{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .forms{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px;
+        margin: 60px;
+        width: 700px;
+        height: 786px;
+        background-color: $white;
+
+        input{
+            width: 600px;
+            height: 50px;
+            color: $grey-61;
+            font-size: $font-size-20;
+            padding: 10px;
+        }
+
+        textarea{
+            width: 600px;
+            height: 400px;
+            color: $grey-61;
+            font-size: $font-size-20;
+            padding: 10px;
+        }
+    }
+
+    .button-send{
+        border: 1px solid $first-base-color;
+        height: 60px;
+        width: 200px;
+        background-color: $first-base-color;
+        font-size: $font-size-20;
+
+        .button{
+            margin-top: 15px;
+        }
+    }
+
+    button:hover{
+        background-color: $dark-orange;
+        border: 1px solid $dark-orange;
+    }
+
+    .map{
+        padding: 30px;
+        margin: 60px;
+        width: 700px;
+        background-color: $white;
+    }
+    
+    .contact-info{
+        width: 700px;
+        padding: 30px;
+        margin: 60px;
+        background-color: $white;
+
+        img{
+            height: 30px;
+            width: 30px;
+            margin: 10px;
+        }
+
+        p{
+            font-size: $font-size-20;
+            margin-top: 10px;
+            color: $grey-61;
+        }
+    }
+
+    .location{
+        display: flex;
+        gap: 15px;
+    }
+
+    .phone{
+        display: flex;
+        gap: 15px;
+    }
+    
+    .mail{
+        display: flex;
+        gap: 15px;
+    }
+}
+
+
+

@@ -1,0 +1,38 @@
+@import 'src/assets/styles/variables.scss';
+
+.pageheader{
+    background-color: $grey-45;
+    
+
+    .logout-button{
+        display: flex;
+        justify-content: end;
+        padding: 50px;
+    }
+
+    button{
+        height: 50px;
+        width: 150px;
+        font-size: $font-size-20;
+        background-color: $blue;
+        color: $white;
+        border: 1px solid $blue;
+    }
+
+    button:hover{
+        background-color: $white;
+        color: $blue;
+        border: 1px solid $white;
+    }
+
+    .page-title{
+        margin-left: 25px;
+
+        h1{
+            padding: 20px;
+            font-size: $font-size-35;
+            font-style: italic;
+            color: $grey-80;
+        }
+    }
+}

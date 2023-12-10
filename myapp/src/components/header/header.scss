@@ -43,7 +43,30 @@ header{
     .active{
         color: $first-base-color;
     }
+}
+.basket{
+    display: flex;
+    gap: 5px;
+    img{
+        height: 30px;
+        width: 30px;
+    }
+    p{
+        color: $white;
+    }
 
+    button{
+        height: 50px;
+        width: 100px;
+        background-color: $first-base-color;
+        font-weight: bold;
+        border: 1px solid $first-base-color
+    }
+
+    button:hover{
+        background-color: $dark-orange;
+        border: 1px solid $dark-orange;
+    }
 }
 }
 

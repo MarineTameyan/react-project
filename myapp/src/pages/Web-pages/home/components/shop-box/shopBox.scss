@@ -1,0 +1,30 @@
+@import "src/assets/styles/variables.scss";
+
+.offer-box{
+    width: 100%;
+    min-height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    gap:10px;
+    p{
+        font-size: $font-size-20;
+        color: $white;
+    }
+
+    .offer-button{
+        button{
+            height: 40px;
+            width: 150px;
+            background-color: $first-base-color;
+            border: 1px solid $first-base-color;
+        }
+       
+    }
+
+    button:hover{
+        background-color: $dark-orange;
+        border: 1px solid $dark-orange;
+    }
+
+}

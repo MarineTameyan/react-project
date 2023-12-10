@@ -1,0 +1,65 @@
+@import 'src/assets/styles/variables.scss';
+
+.admin-notifications{
+    
+    .message-titles{
+        display: flex;
+        justify-content: center;
+        
+        p{
+            height: 50px;
+            border: 1px solid $grey-62;
+            font-size: $font-size-25;
+            font-style: italic;
+            text-align: center;
+            padding-top: 5px;
+            
+        }
+
+        .username{
+            width: 150px;
+        }
+
+        .mail{
+            width: 150px;
+        }
+
+        .subject{
+            width: 250px;
+        }
+
+        .question{
+            width: 400px;
+        }
+    }
+    .message-description{
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        p{
+            height: 50px;
+            border: 1px solid $grey-62;
+            font-size: $font-size-25;
+            font-style: italic;
+            text-align: center;
+            padding-top: 5px;
+            background-color: $white;
+        }
+
+        .username{
+            width: 150px;
+        }
+
+        .mail{
+            width: 150px;
+        }
+
+        .subject{
+            width: 250px;
+        }
+
+        .question{
+            width: 400px;
+        }
+    }
+}
