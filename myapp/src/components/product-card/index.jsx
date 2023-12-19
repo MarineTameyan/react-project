@@ -4,8 +4,8 @@ import "./index.scss"
 
 export const ProductCard = ({ data }) => {
     return <Link to={routerLinks.DETAIL.replace(':id', data.id)} className="product-list">
-        <img src={data.src} alt="" />
-        <h5>{data.product}</h5>
+        <img src={data.image} alt="" />
+        <h5>{data.name}</h5>
         <p>{data.price}</p>
     </Link>
 }

@@ -7,10 +7,12 @@
   height: 100vh;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  justify-content:flex-end;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
   z-index: 10;
+
 
   .modal {
         display: flex;
@@ -18,7 +20,7 @@
         width: calc(100% - 50%);
         left: 25%;
         border-radius: 15px;
-        background-color: $grey-45;
+        background-color: $white;
         z-index: 20;
         padding: 10px;
         border: 1px solid $black;
@@ -53,11 +55,11 @@
       width: 20px;
       height: 25px;
       cursor: pointer;
-      border: 1px solid black;
+      border: 1px solid $grey-80;
       font-size: 16px;
       font-weight: 700;
       text-align: center;
-      color: white;
+      color: $grey-80;
   
       &:hover {
         color: $first-base-color;

@@ -3,14 +3,10 @@ import './admin.scss'
 import { NavLink } from "react-router-dom";
 import { routerLinks } from "../../../router/router";
 
-
 export const Admin = () => {
   return (
     <div className="admin-page">
       <div className="admin">
-        <div className="home-button">
-          <button>HOME</button>
-        </div>
         <div className="admin-links">
           <ul>
             <li>

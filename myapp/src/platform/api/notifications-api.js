@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const content = 'message'
+const content = 'message-m'
 
 export const getMessage = async ()=>{
     return await axios.get(`${process.env.REACT_APP_API_URL}/${content}`)

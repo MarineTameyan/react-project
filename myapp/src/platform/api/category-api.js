@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const content = 'category'
+const content = 'category-m'
 
 export const getCategoryList = async ()=>{
     return await axios.get(`${process.env.REACT_APP_API_URL}/${content}`)

@@ -7,6 +7,8 @@ export const ManageCategoryDialog = ({ manageData, updateCategoryList, onClose }
     categoryName: '',
     image: ''
   });
+
+
   useEffect(() => {
     if (manageData) {
       setFormData({ ...formData, categoryName: manageData.categoryName });
@@ -53,11 +55,11 @@ export const ManageCategoryDialog = ({ manageData, updateCategoryList, onClose }
           <input type="file" hidden onChange={encodeImageFileAsURL}/>
         </label>
         <div className="admin-categorylist">
-          <div className='image-test' style={{ backgroundImage: `url('${formData.image}')` }}></div>
+          <div className='image-test' style={{ backgroundImage: `url('${formData.image}')`}}></div>
         </div>
         <label>
-          <input type="text" value={formData.categoryName} placeholder="Category Name" onChange={handleChange} 
-        />
+          <input type="text" value={formData.categoryName} placeholder="Category Name" 
+          onChange={handleChange}/>
         </label>
         </div>
       </div>

@@ -23,14 +23,19 @@
 .confirmButton{
     margin-top: 50px;
     display: flex;
+    justify-content: center;
     gap: 200px;
 
     .confirmBtn{
         width: 200px;
         height: 50px;
         font-weight: bold;
-        color: $white;
+        color: $grey-80;
         font-size: $font-size-22;
-        background-color: $blue;
+        background-color: $first-base-color;
+    }
+    
+    .confirmBtn:hover{
+        background-color: $dark-orange;
     }
 }

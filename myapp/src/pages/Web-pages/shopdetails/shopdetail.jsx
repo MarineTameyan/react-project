@@ -7,73 +7,25 @@ import { Tabs } from "../shop/components/tabs/tab";
 import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../../context/context";
 import { ProductCard } from "../../../components/product-card";
-import Dress_1 from "../../../assets/images/blouse.jpg";
-import Shoes from "../../../assets/images/shoes.jpg";
-import Camera from "../../../assets/images/camera.jpg";
-import Cosmetics from "../../../assets/images/cosmetics.jpg";
-import Lamp from "../../../assets/images/lamp.jpg";
-import Phone from "../../../assets/images/phone.jpg";
-import Watch from "../../../assets/images/watch.jpg";
-import ManFashion from "../../../assets/images/mansweater.jpg";
-import Chair from "../../../assets/images/chair.jpg";
+import { useEffect } from "react";
+import { getProductList } from "../../../platform/api/product-api";
 
 export const ShopDetail = () =>{
-    const product = [
-        {
-            src: Camera,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id1"
-        },
-        {
-            src: ManFashion,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id2"
-        },
-        {
-            src: Lamp,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id3"
-        },
-        {
-            src: Shoes,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id4"
-        },
-        {
-            src: Phone,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id5"
-        },
-        {
-            src: Watch,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id6"
-        },
-        {
-            src: Dress_1,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id7"
-        },
-        {
-            src: Cosmetics,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id8"
-        },
-        {
-            src: Chair,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id9"
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+        getProductsData();
+        console.log(productList);
+      }, []);
+    
+
+    const getProductsData = async () => {
+        const result = await getProductList();
+        if (result.data) {
+          console.log(result.data);
+          setProductList(result.data);
         }
-    ]
+      };
 
     const {addToCard} = useProductContext()
     const [count, setCount] = useState(1)
@@ -99,7 +51,7 @@ export const ShopDetail = () =>{
                 count
             }
         )
-        // navigate('/shop/shopping-cart')
+        navigate('/shop/shopping-cart')
     }
     
 
@@ -136,7 +88,7 @@ export const ShopDetail = () =>{
         </div>
     </div>
     <div className="product-show">
-    {product.map((item,index)=>{
+    {productList.map((item,index)=>{
         return <ProductCard key={index} data={item}/>
     })}
     </div>

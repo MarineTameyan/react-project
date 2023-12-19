@@ -10,7 +10,12 @@ import "./auth.scss";
 
 
 export const Auth = () => {
-    return <div className="G-admin-wrapper G-flex">
+    return <div className="auth">
+        <div className="logo-auth">
+          <div className="first">MULTI</div>
+          <div className="second">SHOP</div>
+        </div>
+    <div className="G-admin-wrapper G-flex">
         <div className="G-admin-sidebar">
             <Admin></Admin>
         </div>
@@ -23,5 +28,6 @@ export const Auth = () => {
                 <Route path={'/*'} element={<Navigate to={routerLinks.CATEGORIES}/>}/>
             </Routes>
         </div>
+    </div>
     </div>
 }

@@ -7,67 +7,26 @@ import { ShopBox } from "./components/shop-box/shopBox";
 import image_1 from '../../../assets/images/first.jpg';
 import image_2 from '../../../assets/images/second.jpg';
 import { ProductCard } from "../../../components/product-card";
-import Dress from "../../../assets/images/blouse.jpg";
-import Shoes from "../../../assets/images/shoes.jpg";
-import Camera from "../../../assets/images/camera.jpg";
-import Cosmetics from "../../../assets/images/cosmetics.jpg";
-import Lamp from "../../../assets/images/lamp.jpg";
-import Phone from "../../../assets/images/phone.jpg";
-import Watch from "../../../assets/images/watch.jpg";
-import ManFashion from "../../../assets/images/mansweater.jpg";
+import { getProductList } from "../../../platform/api/product-api";
+import { useState, useEffect } from "react";
 
 function Home() {
 
-    const product = [
-        {
-            src: Camera,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id1"
-        },
-        {
-            src: ManFashion,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id2"
-        },
-        {
-            src: Lamp,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id3"
-        },
-        {
-            src: Shoes,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id4"
-        },
-        {
-            src: Phone,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id5"
-        },
-        {
-            src: Watch,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id6"
-        },
-        {
-            src: Dress,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id7"
-        },
-        {
-            src: Cosmetics,
-            product: "Product Name Goes Here",
-            price: '$123',
-            id: "id8"
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+        getProductsData();
+        console.log(productList);
+      }, []);
+    
+
+    const getProductsData = async () => {
+        const result = await getProductList();
+        if (result.data) {
+          console.log(result.data);
+          setProductList(result.data);
         }
-    ]
+      };
     
     return <div className="home-page">
         <div className="home-photos">
@@ -84,7 +43,7 @@ function Home() {
         <Categories />
         <h1>FEATURED PRODUCTS</h1>
         <div className="products">
-            {product.map((item,index)=>{
+            {productList.map((item,index)=>{
                 return <ProductCard key={index} data={item}/>
             })}
         </div>
@@ -94,7 +53,7 @@ function Home() {
         </div>
         <h1>RECENT PRODUCTS</h1>
         <div className="products">
-        {product.map((item,index)=>{
+        {productList.map((item,index)=>{
                 return <ProductCard key={index} data={item}/>
             })}
         </div>
