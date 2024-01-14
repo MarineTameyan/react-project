@@ -11,10 +11,10 @@ export const addSize = async (sizeData)=>{
 }
 
 export const editSize = async (data, id) => {
-    return await axios.put(`${process.env.REACT_APP_BASE_URL}/${content}/${id}`, data)
+    return await axios.put(`${process.env.REACT_APP_API_URL}/${content}/${id}`, data)
 }
 
 export const deleteSize = async (id) => {
-    return await axios.delete(`${process.env.REACT_APP_BASE_URL}/${content}/${id}`)
+    return await axios.delete(`${process.env.REACT_APP_API_URL}/${content}/${id}`)
 }
 

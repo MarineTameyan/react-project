@@ -191,7 +191,7 @@ export const ManageProductDialog = ({manageData, onClose, updateList}) => {
                                             value={item._id}
                                             key={index}
                                         >
-                                            {item.name ? item.name : "Add product categorie"}
+                                            {item.categoryName ? item.categoryName : "Add product categorie"}
                                         </option>
                                     );
                                 })}
@@ -206,7 +206,7 @@ export const ManageProductDialog = ({manageData, onClose, updateList}) => {
                                 className="sizeSelect"
                                 onChange={selectColor}>
                                 <option value="">Select Color</option>
-
+                                {console.log(colorList)}
                                 {colorList.map((item, index) => {
                                     return (
                                         <option
@@ -214,7 +214,7 @@ export const ManageProductDialog = ({manageData, onClose, updateList}) => {
                                             key={index}
                                             value={item._id}
                                         >
-                                            {item.name ? item.name : "Add product size"}
+                                            {item.colorName ? item.colorName : "Add product size"}
                                         </option>
                                     );
                                 })}

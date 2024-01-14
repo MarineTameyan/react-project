@@ -1,14 +1,18 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-//  default haytararum enq  datark object arjeq
 const ProductContext = createContext({})
-
-
 
 export const ProductProvider = ({ children }) => {
     const [productList, setProductList] = useState([])
+
     const addToCard = (data) => {
-        setProductList([...productList, data])
+        const findProduct = productList.find(x => x._id === data._id)
+
+        if (findProduct) {
+            findProduct.count = data.count
+        } else {
+            setProductList([...productList, data])
+        }
     }
 
     return <ProductContext.Provider value={
@@ -19,10 +23,10 @@ export const ProductProvider = ({ children }) => {
 }
 
 export const useProductContext = () => {
-    const testContext = useContext(ProductContext)
+    const productContext = useContext(ProductContext)
 
     return {
-        productList: testContext.productList,
-        addToCard: testContext.addToCard
+        productList: productContext.productList,
+        addToCard: productContext.addToCard
     }
 }

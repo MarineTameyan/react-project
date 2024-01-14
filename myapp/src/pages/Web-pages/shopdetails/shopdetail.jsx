@@ -8,16 +8,32 @@ import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../../context/context";
 import { ProductCard } from "../../../components/product-card";
 import { useEffect } from "react";
-import { getProductList } from "../../../platform/api/product-api";
+import { getProductById, getProductList } from "../../../platform/api/product-api";
+import { useParams } from "react-router-dom";
 
 export const ShopDetail = () =>{
     const [productList, setProductList] = useState([]);
+    const {id} = useParams()
+    const [productDetails, setProductDetails] = useState(null)
+
 
     useEffect(() => {
         getProductsData();
         console.log(productList);
+
+        if(id){
+            getProductDetails()
+        }
       }, []);
     
+
+
+      const getProductDetails = async()=>{
+        const result = await getProductById(id)
+        if(result.data){
+            setProductDetails(result.data)
+        }
+      }
 
     const getProductsData = async () => {
         const result = await getProductList();
@@ -45,9 +61,7 @@ export const ShopDetail = () =>{
     const handleShopClick = () =>{
         addToCard(
             {
-                namr:'ttest',
-                desc:'test',
-                price:300,
+                ...productDetails,
                 count
             }
         )
@@ -58,11 +72,11 @@ export const ShopDetail = () =>{
     return <div className="box">
     <div className="img-box">
         <div className="image">
-            <img src={Dress} alt="" />
+            {productDetails?<img src={productDetails.image} alt="" />:null}
         </div>
         <div className="text-box">
-            <h5>Product Name Goes Here</h5>
-            <p className="item-price">$150</p>
+            <h5>{productDetails? productDetails.name:' ----'}</h5>
+            <p className="item-price">{productDetails? productDetails.price:'0'}</p>
             <p className="text">Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et, labore clita lorem magna duo dolor no seaNonumy</p>
            <div className="sizes">
                     <Size/>

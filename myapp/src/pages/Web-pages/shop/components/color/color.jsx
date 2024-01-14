@@ -1,30 +1,27 @@
 import React from "react";
 import "./color.scss"
+import { getColorList } from "../../../../../platform/api/color-api";
+import { useState, useEffect } from "react";
 
 export const Color = () =>{
-    const color = [
-        
-        {
-            textcolor: "Black"
-        },
-        {
-            textcolor: "White"
-        },
-        {
-            textcolor: "Red"
-        },
-        {
-            textcolor: "Blue"
-        },
-        {
-            textcolor: "Green"
+    const [colorList, setColorList] = useState([]);
+
+    useEffect(() => {
+        getColorListData();
+      }, []);
+    
+      const getColorListData = async () => {
+        const result = await getColorList();
+        if (result.data) {
+          setColorList(result.data);
         }
-    ]
+      }
+
     return <div className="color-list">
-      {color.map((item, index) => (
+      {colorList.map((item, index) => (
         <div key={index} className="color">
           <input type="checkbox" />
-            <p>{item.textcolor}</p>
+            <p>{item.colorName}</p>
           </div>
       ))}
     </div>

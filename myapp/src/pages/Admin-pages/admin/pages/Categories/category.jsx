@@ -5,16 +5,28 @@ import { ManageCategoryDialog } from "./manage-category-dialog/managecategory";
 import { DeleteDialog } from "../../../../../components/deleteDialog/delete";
 import { Modal } from "../../../../../components/modals/modal";
 import { PageHeader } from "../../../../../components/page-header/pageheader";
+import { getProductList } from "../../../../../platform/api/product-api";
 
 export const Category = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [categoryList, setCategoryList] = useState([]);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
+  const [disableDeleteCategory, setDisableDeleteCategory] = useState("");
+  const [productList, setProductList] = useState([]);
 
 useEffect(()=>{
   getCategoryListData()
+  getProductsData()
 },[])
+
+const getProductsData = async () => {
+  const result = await getProductList();
+  if (result.data) {
+    console.log(result.data);
+    setProductList(result.data);
+  }
+};
 
   const getCategoryListData = async()=>{
     const result = await getCategoryList()
@@ -30,6 +42,22 @@ useEffect(()=>{
     }
   };
 
+  const openDeleteModal = (categoryData) => {
+    setSelectedItem(categoryData);
+    setIsOpenDeleteModal(true);
+    if (productList.length) {
+      const findProduct = productList.find(
+        (x) => x.categoryId === categoryData._id
+      );
+
+      if (findProduct) {
+        setDisableDeleteCategory(
+          `There are products in ${categoryData.name} category, you can't delete it`
+        );
+        setIsOpenDeleteModal(true);
+      }
+    }
+  };
 
   const handleDelete = async () => {
     await deleteCategory(selectedItem._id);
@@ -72,12 +100,11 @@ useEffect(()=>{
               </button>
               <button
                 onClick={() => {
-                  handleSelectItem(item);
-                  setIsOpenDeleteModal(true);
+                openDeleteModal(item);
                 }}
               >
                 Delete
-              </button>
+                </button>
             </div>
           </div>
         );
@@ -111,6 +138,7 @@ useEffect(()=>{
           setSelectedItem(null);
         }}
         onDelete={() => handleDelete()}
+        disableDeleteText={disableDeleteCategory}
         title={"Hastat uzum eq jnjel ays categorian"}
       />
     </Modal>

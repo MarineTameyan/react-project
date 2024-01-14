@@ -22,16 +22,16 @@ function App() {
   useEffect(() => {
     let tokenData = localStorage.getItem('token')
     setToken(tokenData)
-    if(token){
-navigate(routerLinks.CATEGORIES)
+    if (token) {
+      navigate(routerLinks.CATEGORIES)
     }
-    
-}, []);
 
-// if(userData.userLoading){
-//    <p>Loading.........</p>
-// }
-return  token ?  <Auth/> : <Guest/>
+  }, []);
+
+  // if(userData.userLoading){
+  //    <p>Loading.........</p>
+  // }
+  return token ? <Auth /> : <Guest />
 
 }
 

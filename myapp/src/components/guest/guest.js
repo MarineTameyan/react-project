@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { routerLinks } from "../../router/router";
 import Home from "../../pages/Web-pages/home/home";
 import Shop from "../../pages/Web-pages/shop/shop";
@@ -24,6 +24,8 @@ export const Guest = () => {
             <Route path={routerLinks.CHECKOUT} element={<Checkout />}></Route>
             <Route path={routerLinks.LOGIN} element={<Login />}></Route>
             <Route path={routerLinks.REGISTRATION} element={<Registration />}></Route>
+            <Route path={'/*'} element={<Navigate to={routerLinks.HOME}/>}/>
+
         </Routes>
         <Footer />
     </>
